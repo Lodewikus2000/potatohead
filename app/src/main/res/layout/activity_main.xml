@@ -6,6 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:scaleX="1"
+        android:scaleY="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <ImageView
+            android:id="@+id/body"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:srcCompat="@drawable/body" />
+
+        <ImageView
+            android:id="@+id/arms"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/arms" />
+
+        <ImageView
+            android:id="@+id/ears"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ears" />
+
+        <ImageView
+            android:id="@+id/eyebrows"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/eyebrows" />
+
+        <ImageView
+            android:id="@+id/eyes"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/eyes" />
+
+        <ImageView
+            android:id="@+id/glasses"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/glasses" />
+
+        <ImageView
+            android:id="@+id/hat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/hat" />
+
+        <ImageView
+            android:id="@+id/mouth"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/mouth" />
+
+        <ImageView
+            android:id="@+id/mustache"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/mustache" />
+
+        <ImageView
+            android:id="@+id/shoes"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/shoes" />
+
+        <ImageView
+            android:id="@+id/nose"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/nose" />
+    </FrameLayout>
+
     <android.support.v7.widget.GridLayout
         android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
@@ -119,94 +223,5 @@
             app:layout_row="3" />
 
     </android.support.v7.widget.GridLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="373dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/body"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            app:srcCompat="@drawable/body" />
-
-        <ImageView
-            android:id="@+id/arms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/arms" />
-
-        <ImageView
-            android:id="@+id/ears"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ears" />
-
-        <ImageView
-            android:id="@+id/eyebrows"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/eyebrows" />
-
-        <ImageView
-            android:id="@+id/eyes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/eyes" />
-
-        <ImageView
-            android:id="@+id/glasses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/glasses" />
-
-        <ImageView
-            android:id="@+id/hat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/hat" />
-
-        <ImageView
-            android:id="@+id/mouth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/mouth" />
-
-        <ImageView
-            android:id="@+id/mustache"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/mustache" />
-
-        <ImageView
-            android:id="@+id/shoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/shoes" />
-
-        <ImageView
-            android:id="@+id/nose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/nose" />
-    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
