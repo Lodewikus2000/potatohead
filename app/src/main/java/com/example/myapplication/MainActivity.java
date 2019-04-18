@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,33 +20,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
+        SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
 
 
-            for (String part: bodyParts){
-                boolean visible = savedInstanceState.getBoolean(part);
-                if (visible){
+        for (String part: bodyParts){
+            boolean visible = prefs.getBoolean(part, false);
+            if (visible){
                     ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
                     image.setVisibility(View.VISIBLE);
+                    CheckBox checkbox = (CheckBox) findViewById(getResources().getIdentifier(part +"Check", "id", this.getPackageName()));
+                    checkbox.setChecked(true);
                 }
-            }
-
-            boolean nose = savedInstanceState.getBoolean("nose");
-            boolean ears = savedInstanceState.getBoolean("ears");
-            boolean mustache = savedInstanceState.getBoolean("mustache");
-            boolean glasses = savedInstanceState.getBoolean("glasses");
-            boolean hat = savedInstanceState.getBoolean("hat");
-            boolean mouth = savedInstanceState.getBoolean("mouth");
-            boolean shoes = savedInstanceState.getBoolean("shoes");
-            boolean arms = savedInstanceState.getBoolean("arms");
-            boolean eyes = savedInstanceState.getBoolean("eyes");
-            boolean eyebrows = savedInstanceState.getBoolean("eyebrows");
-
         }
+
+//        if (savedInstanceState != null) {
+//
+//            for (String part: bodyParts){
+//                boolean visible = savedInstanceState.getBoolean(part);
+//                if (visible){
+//                    ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
+//                    image.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        }
     }
 
     public void checkClicked(View v) {
         Log.d("potato", "clicked a checkbox");
+
+
+        SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
 
         CheckBox checkbox = (CheckBox) v;
 
@@ -55,9 +61,16 @@ public class MainActivity extends AppCompatActivity {
         if (checkbox.isChecked()) {
             ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
             image.setVisibility(View.VISIBLE);
+
+            editor.putBoolean(part, true);
+            editor.apply();
+
         } else {
             ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
             image.setVisibility(View.INVISIBLE);
+
+            editor.putBoolean(part, false);
+            editor.apply();
         }
     }
 
