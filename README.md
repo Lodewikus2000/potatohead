@@ -4,7 +4,9 @@ An immersive app that enables the user to play god over an innocent potato. Chec
 
 
 An example of a happy Mr. Potatohead.
+
 <img src="screenshot1.png" width="240" alt="image of Mr. Potatohead">
 
 Now includes rotation!
+
 <img src="screenshot2.png" height="240" alt="image of a rotated Mr. Potatohead">
