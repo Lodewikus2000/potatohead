@@ -20,29 +20,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // We now use the sharedPreferences to remember Mr. Potatohead's state.
         SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
 
 
         for (String part: bodyParts){
             boolean visible = prefs.getBoolean(part, false);
             if (visible){
-                    ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
+                    ImageView image = (ImageView) findViewById(getResources().getIdentifier(
+                            part, "id", this.getPackageName()));
                     image.setVisibility(View.VISIBLE);
-                    CheckBox checkbox = (CheckBox) findViewById(getResources().getIdentifier(part +"Check", "id", this.getPackageName()));
+
+                    CheckBox checkbox = (CheckBox) findViewById(getResources().getIdentifier(
+                            part +"Check", "id", this.getPackageName()));
                     checkbox.setChecked(true);
                 }
         }
-
-//        if (savedInstanceState != null) {
-//
-//            for (String part: bodyParts){
-//                boolean visible = savedInstanceState.getBoolean(part);
-//                if (visible){
-//                    ImageView image = (ImageView) findViewById(getResources().getIdentifier(part, "id", this.getPackageName()));
-//                    image.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        }
     }
 
     public void checkClicked(View v) {
@@ -71,15 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
             editor.putBoolean(part, false);
             editor.apply();
-        }
-    }
-
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState); // always call super
-
-        for (String part: bodyParts){
-            Boolean visible = (findViewById(getResources().getIdentifier(part,"id", this.getPackageName())).getVisibility() == View.VISIBLE);
-            outState.putBoolean(part, visible);
         }
     }
 }
